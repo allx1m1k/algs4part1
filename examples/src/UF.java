@@ -123,6 +123,11 @@ public class UF {
         if (p < 0 || p >= id.length) throw new IndexOutOfBoundsException();
         while (p != id[p]) {
             id[p] = id[id[p]];    // path compression by halving
+            /*
+            https://class.coursera.org/algs4partI-007/forum/thread?thread_id=105
+            int val = id[p];
+            id[p] = id[val];
+             */
             p = id[p];
         }
         return p;
