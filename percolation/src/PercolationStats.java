@@ -9,12 +9,8 @@
  * Description: Class in charge of running the simulation.
  *
  *************************************************************************/
-
-/**
- * Created by dima on 2/9/2015.
- */
 public class PercolationStats {
-    private int experimentCount;
+    private int experimentCount; //number of tests
     private int rowLen; //number of sites in row
     private int total; //number of sites in matrix
     private int runCount; //number of rows
@@ -45,7 +41,12 @@ public class PercolationStats {
         }
     }
 
-    // run the Monte Carlo simulation on an N-by-N grid
+
+    /**
+     * run the Monte Carlo simulation on an N-by-N grid
+     * @param N number of test
+     * @return sites which was opened
+     */
     private int monteCarloSimulation(int N) {
         int c = 0;
         Percolation p = new Percolation(N);
@@ -96,7 +97,7 @@ public class PercolationStats {
     }
 
     /**
-     *
+     * Test method
      * @param args matrix dimension, number of tests
      */
     public static void main(String[] args) {
@@ -114,5 +115,4 @@ public class PercolationStats {
         StdOut.println("stddev                  = "+ s);
         StdOut.println("95% confidence interval = "+ l +", "+ h);
     }
-
 }
